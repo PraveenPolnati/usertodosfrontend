@@ -22,7 +22,7 @@ class HomePage extends React.Component {
 
     fetchTasks = async () => {
         try {
-            const response = await fetch('http://localhost:3000/api/tasks', {
+            const response = await fetch('https://usertodosbackend-1.onrender.com/api/tasks', {
                 method:'GET',
                 headers: {
                     'Authorization': `Bearer ${this.state.token}`
@@ -47,7 +47,7 @@ class HomePage extends React.Component {
         try {
             if (this.state.isEditing) {
                 const updatedTask = { ...this.state.editingTask, ...task };
-                await fetch(`http://localhost:3000/api/tasks/${this.state.editingTask.id}`, {
+                await fetch(`https://usertodosbackend-1.onrender.com/api/tasks/${this.state.editingTask.id}`, {
                     method: 'PUT',
                     headers: {
                         'Content-Type': 'application/json',
@@ -56,7 +56,7 @@ class HomePage extends React.Component {
                     body: JSON.stringify(updatedTask)
                 });
             } else {
-                await fetch('http://localhost:3000/api/tasks', {
+                await fetch('https://usertodosbackend-1.onrender.com/api/tasks', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -79,7 +79,7 @@ class HomePage extends React.Component {
 
     handleDeleteTask = async (taskId) => {
         try {
-            await fetch(`http://localhost:3000/api/tasks/${taskId}`, {
+            await fetch(`https://usertodosbackend-1.onrender.com/api/tasks/${taskId}`, {
                 method: 'DELETE',
                 headers: {
                     'Authorization': `Bearer ${this.state.token}`
@@ -94,7 +94,7 @@ class HomePage extends React.Component {
     handleToggleComplete = async (taskId) => {
         const task = this.state.tasks.find(t => t.id === taskId);
         try {
-            await fetch(`http://localhost:3000/api/tasks/${taskId}`, {
+            await fetch(`https://usertodosbackend-1.onrender.com/api/tasks/${taskId}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',

@@ -17,7 +17,7 @@ class ProfilePage extends React.Component {
 
     fetchProfile = async () => {
         try {
-            const response = await fetch('http://localhost:3000/profile', {
+            const response = await fetch('https://usertodosbackend-1.onrender.com/profile', {
                 headers: {
                     'Authorization': `Bearer ${Cookies.get('token')}`
                 }
@@ -47,7 +47,7 @@ class ProfilePage extends React.Component {
 
     handleUpdate = async () => {
         try {
-            const response = await fetch('http://localhost:3000/profile/update', {
+            const response = await fetch('https://usertodosbackend-1.onrender.com/profile/update', {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',

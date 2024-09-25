@@ -19,7 +19,7 @@ class Signup extends React.Component {
         event.preventDefault();
         const { name, email, password } = this.state;
 
-        const response = await fetch('http://localhost:3000/auth/signup', {
+        const response = await fetch('https://usertodosbackend-1.onrender.com/auth/signup', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
