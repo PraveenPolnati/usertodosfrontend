@@ -29,7 +29,6 @@ class Login extends React.Component {
         const data = await response.json();
 
         if (data.success) {
-            console.log(data.token)
             Cookies.set('token',data.token,{expires:10})
             this.props.history.push('/'); 
             this.setState({ error: '' });
